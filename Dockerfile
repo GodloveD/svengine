@@ -31,10 +31,10 @@ RUN apt-get install -y bzip2 libbz2-dev liblzma-dev openssl libssl-dev
 RUN apt-get install -y zlib1g-dev libncurses5-dev wget git unzip libcurl4-openssl-dev libxml2-dev
 
 ### python, has to precede bedtools ###
-RUN apt-get install -y python libpython-dev python-pip
-RUN apt-get install -y python-numpy python-scipy
+RUN apt-get install -y python3 libpython3-dev python3-pip
+RUN apt-get install -y python3-numpy python3-scipy
 ### install python packages ###
-RUN pip install -U numpy scipy tables six pandas pysam pybedtools dendropy
+RUN pip3 install -U numpy scipy tables six pandas pysam pybedtools dendropy
 
 ### install bedtools ###
 RUN cd /opt/setup && git clone https://github.com/arq5x/bedtools.git
